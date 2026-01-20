@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 void isPrime(int a);
 
 int main()
@@ -21,9 +21,9 @@ void isPrime(int a)
         return;
     }
     int prime = 0;
-    for (int i = 2; i <= a; i++)
+    for (int i = 2; i <= sqrt(a); i++)
     {
-        if (i!= a && a%i==0)
+        if (a%i==0)
         {
             prime = 1;
             break;
@@ -35,5 +35,4 @@ void isPrime(int a)
         return;
     }
     printf("%d is not a prime number\n", a);
-    return;
 }
