@@ -18,17 +18,22 @@ print(f"You choose: {reverseDict[you]}\nComputer choose: {reverseDict[computer]}
 if computer == you:
     print("Draw")
 else:
-    if computer == -1 and you == 1:
-        print("You Win!")
-    elif computer == -1 and you == 0:
+    if (computer - you) == -1 or (computer - you) == 2:
         print("You Lose!")
-    elif computer == 1 and you == -1:
-        print("You Lose!")
-    elif computer == 1 and you == 0:
-        print("You Win!")
-    elif computer == 0 and you == 1:
-        print("You Lose!")
-    elif computer == 0 and you == -1:
-        print("You Win!")
     else:
-        print("Something went wrong")
+        print("You Win!")
+
+    # if computer == -1 and you == 1:
+    #     print("You Win!")
+    # elif computer == -1 and you == 0:
+    #     print("You Lose!")
+    # elif computer == 1 and you == -1:
+    #     print("You Lose!")
+    # elif computer == 1 and you == 0:
+    #     print("You Win!")
+    # elif computer == 0 and you == 1:
+    #     print("You Lose!")
+    # elif computer == 0 and you == -1:
+    #     print("You Win!")
+    # else:
+    #     print("Something went wrong")
