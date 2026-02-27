@@ -4,8 +4,8 @@ This is a collection of coding work I have done while learning and practicing pr
 
 ## What’s Inside
 - All my code is organized by programming language in separate folders.
-- Each file represents something I wrote while learning, experimenting, or solving problems.
-- 
+- Each file represents something I wrote while learning, experimenting, or solving problems.\
+
 ## Why This Repo Exists
 - To track my progress in coding.
 - To keep a record of what I have learned.
