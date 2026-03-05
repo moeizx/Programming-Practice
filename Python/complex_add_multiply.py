@@ -9,7 +9,9 @@ class Complex:
         return f"{self.real + obj2.real}i + {self.img + obj2.img}j"
     
     def __mul__(self, obj2):
-        return f"{self.real * obj2.real}i + {self.img * obj2.img}j"
+        real = self.real * obj2.real - self.img * obj2.img
+        img = self.real * obj2.img + self.img * obj2.real
+        return f"{real} + {img}i"
     
 obj1 = Complex(3,4)
 obj2 = Complex(1,3)
