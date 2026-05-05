@@ -1,21 +1,37 @@
-# Write a Python program that generates a random number between 1 and 10. The user has to guess the number. After each guess, the program should give hints: 'Lower number please' if the guess is too high, 'Higher number please' if the guess is too low. When the user guesses correctly, display the number of attempts it took.
-
 from random import randint
 
-num = randint(1, 100)
-guess = False
+num = randint(1,100)
 steps = 0
+max_attempts = 7
+user_choice = None
 
-while(guess == False):
-    x = int(input("Guess: "))
-    steps += 1
-    if x > num:
-        print("Lower Number Please")
+print("Guess the number between 1 to 100\n You have 7 attempts to guess")
+
+while steps<max_attempts:
+    try:
+        user_choice = int(input("Enter number: "))
+        steps += 1
+    except ValueError:
+        print("Please enter a valid number")
         continue
-    elif x < num:
-        print("Higher number please")
-        continue
+
+    if user_choice < num:
+        if abs(num - user_choice) <= 5:
+            print("Very Close - Too Low")
+        else:
+            print("Too Low")
+    
+    elif user_choice > num:
+        if abs(num - user_choice) <= 5:
+            print("Very Close - Too High")
+        else:
+            print("Too High")
+
     else:
-        print("Correct guess!")
-        print(f"Number of steps: {steps}")
-        guess = True
+        break
+
+if user_choice == num:
+    print(f"Correct!\nNumber of steps: {steps}")
+
+else:
+    print(f"Out of attempts! The number was {num}")
